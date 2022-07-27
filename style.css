@@ -1,3 +1,16 @@
+body {
+    margin-left: 450px;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+}
+
+.header h2 {
+    margin-right: 328px;
+}
+
 .grid {
     width: 606px;
     height: 606px;
@@ -8,6 +21,8 @@
 .sq {
     height: 200px;
     width: 200px;
+    background-color: greenyellow;
+    border-radius: 10px;
     border: solid black 1px;
 }
 
@@ -18,4 +33,14 @@
 
 h2 {
     size: 12px;
+}
+
+.boom {
+    background-image: url('whack.jpg');
+    background-size: cover;
+}
+
+.miss {
+    background-image: url('miss.jpg');
+    background-size: cover;
 }

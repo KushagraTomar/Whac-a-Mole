@@ -6,11 +6,13 @@ const score = document.querySelector('#score')
 let result = 0
 let hitPos
 let timerId = null
-let curTime = 60
+let curTime = 61
 
 function randomSquare() {
     squares.forEach(square => {
         square.classList.remove('mole')
+        square.classList.remove('boom')
+        square.classList.remove('miss')
     })
 
     let randomSq = squares[Math.floor(Math.random() * 9)]
@@ -24,12 +26,15 @@ squares.forEach(square => {
             result++
             score.innerHTML = result
             hitPos = null
+            square.classList.add('boom')
+        } else {
+            square.classList.add('miss')
         }
     })
 })
 
 function moveTheMole() {
-    timerId = setInterval(randomSquare, 600)
+    timerId = setInterval(randomSquare, 700)
 }
 moveTheMole()
 
@@ -44,5 +49,4 @@ function countDown() {
         alert('Game Over! Your score is ' + result)
     }
 }
-
 let countDownId = setInterval(countDown, 1000)
